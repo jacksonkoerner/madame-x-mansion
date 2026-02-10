@@ -4,8 +4,6 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Ornament from '@/components/Ornament';
 
-const basePath = typeof window !== 'undefined' && window.location.pathname.includes('/madame-x-mansion') ? '/madame-x-mansion' : '';
-
 const storyBeats = [
   {
     date: '1859',
@@ -58,40 +56,42 @@ const storyBeats = [
 ];
 
 const bgImages: Record<string, string> = {
-  painting: `${basePath}/images/madame-x-painting.jpg`,
-  study: `${basePath}/images/madame-x-study.jpg`,
-  studio: `${basePath}/images/studio-photo.jpg`,
-  lachaume: `${basePath}/images/lachaume-ad.jpg`,
+  painting: '/madame-x-mansion/images/madame-x-painting.jpg',
+  study: '/madame-x-mansion/images/madame-x-study.jpg',
+  studio: '/madame-x-mansion/images/studio-photo.jpg',
+  lachaume: '/madame-x-mansion/images/lachaume-ad.jpg',
 };
 
 export default function StoryPage() {
   const beatsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const bgRef = useRef<HTMLDivElement>(null);
+  const bgLayersRef = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
+    // Set initial background
+    Object.entries(bgLayersRef.current).forEach(([name, el]) => {
+      if (el) el.style.opacity = name === 'painting' ? '1' : '0';
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          // Reveal card
           if (entry.isIntersecting) {
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            entry.target.classList.add('opacity-100');
+            entry.target.classList.remove('opacity-0');
+            (entry.target as HTMLElement).style.transform = 'translateY(0)';
 
-            // Update background
+            // Switch background
             const bg = (entry.target as HTMLElement).dataset.bg;
-            if (bg && bgRef.current) {
-              const imgs = bgRef.current.querySelectorAll('[data-bgname]');
-              imgs.forEach((img) => {
-                if ((img as HTMLElement).dataset.bgname === bg) {
-                  (img as HTMLElement).style.opacity = '1';
-                } else {
-                  (img as HTMLElement).style.opacity = '0';
-                }
+            if (bg) {
+              Object.entries(bgLayersRef.current).forEach(([name, el]) => {
+                if (el) el.style.opacity = name === bg ? '1' : '0';
               });
             }
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3, rootMargin: '-10% 0px -10% 0px' }
     );
 
     beatsRef.current.forEach((el) => {
@@ -102,68 +102,95 @@ export default function StoryPage() {
   }, []);
 
   return (
-    <>
-      {/* Fixed backgrounds */}
-      <div ref={bgRef} className="fixed inset-0 z-0 pointer-events-none">
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      {/* Fixed background images */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      >
         {Object.entries(bgImages).map(([name, src]) => (
           <div
             key={name}
-            data-bgname={name}
-            className="absolute inset-0 transition-opacity duration-700"
-            style={{ opacity: name === 'painting' ? 1 : 0 }}
+            ref={(el) => { bgLayersRef.current[name] = el; }}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              opacity: name === 'painting' ? 1 : 0,
+              transition: 'opacity 0.8s ease',
+            }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
               alt=""
-              className="w-full h-full object-cover brightness-[0.25] blur-[2px]"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                filter: 'brightness(0.2) blur(2px)',
+              }}
             />
           </div>
         ))}
       </div>
 
-      <section className="relative z-10 pt-40 pb-8 text-center max-w-[800px] mx-auto px-8">
-        <Ornament />
-        <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light tracking-[0.05em] mb-6">
-          The Story of Madame X
-        </h1>
-        <p className="text-xl italic text-[var(--lavender)] leading-relaxed">
-          In 1859, a girl was born in this mansion who would grow up to become the most scandalous woman in Paris — and the subject of one of America&apos;s most famous paintings.
-        </p>
-      </section>
-
-      <section className="relative z-10 max-w-[700px] mx-auto px-8 py-16 pb-32">
-        {storyBeats.map((beat, i) => (
-          <div
-            key={i}
-            ref={(el) => { beatsRef.current[i] = el; }}
-            data-bg={beat.bg}
-            className="mb-[10vh] opacity-0 translate-y-10 transition-all duration-700"
-          >
-            <div className="beat-card">
-              <span className="font-display text-[0.85rem] font-semibold tracking-[0.3em] uppercase text-[var(--gold)] block mb-3">
-                {beat.date}
-              </span>
-              <h3 className="font-display text-[1.8rem] font-normal text-[var(--ivory)] mb-4 leading-tight">
-                {beat.title}
-              </h3>
-              <p className="text-[1.05rem] text-[rgba(245,240,232,0.85)] leading-relaxed">
-                {beat.text}
-              </p>
-            </div>
-          </div>
-        ))}
-
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <p className="font-display text-2xl font-light italic text-[var(--lavender)] mb-8">
-            Her mansion still stands. Come see it.
+      {/* Content over backgrounds */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <section className="pt-40 pb-8 text-center max-w-[800px] mx-auto px-8">
+          <Ornament />
+          <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-light tracking-[0.05em] mb-6">
+            The Story of Madame X
+          </h1>
+          <p className="text-xl italic text-[var(--lavender)] leading-relaxed">
+            In 1859, a girl was born in this mansion who would grow up to become the most scandalous woman in Paris — and the subject of one of America&apos;s most famous paintings.
           </p>
-          <Link href="/building" className="btn-gold-lg">
-            Explore the Building →
-          </Link>
-        </div>
-      </section>
-    </>
+        </section>
+
+        <section className="max-w-[700px] mx-auto px-8 py-16 pb-32">
+          {storyBeats.map((beat, i) => (
+            <div
+              key={i}
+              ref={(el) => { beatsRef.current[i] = el; }}
+              data-bg={beat.bg}
+              className="mb-[10vh] opacity-0"
+              style={{
+                transform: 'translateY(40px)',
+                transition: 'opacity 0.8s ease, transform 0.8s ease',
+              }}
+            >
+              <div className="beat-card">
+                <span className="font-display text-[0.85rem] font-semibold tracking-[0.3em] uppercase text-[var(--gold)] block mb-3">
+                  {beat.date}
+                </span>
+                <h3 className="font-display text-[1.8rem] font-normal text-[var(--ivory)] mb-4 leading-tight">
+                  {beat.title}
+                </h3>
+                <p className="text-[1.05rem] text-[rgba(245,240,232,0.85)] leading-relaxed">
+                  {beat.text}
+                </p>
+              </div>
+            </div>
+          ))}
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <p className="font-display text-2xl font-light italic text-[var(--lavender)] mb-8">
+              Her mansion still stands. Come see it.
+            </p>
+            <Link href="/building" className="btn-gold-lg">
+              Explore the Building →
+            </Link>
+          </div>
+        </section>
+      </div>
+    </div>
   );
 }

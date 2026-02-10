@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Ornament from '@/components/Ornament';
 
-const basePath = typeof window !== 'undefined' && window.location.pathname.includes('/madame-x-mansion') ? '/madame-x-mansion' : '';
+const basePath = '/madame-x-mansion';
 
 type Category = 'all' | 'artwork' | 'building' | 'courtyard' | 'interiors';
 

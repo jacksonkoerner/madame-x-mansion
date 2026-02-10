@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import ScrollSequence from '@/components/ScrollSequence';
 
-const basePath = process.env.NODE_ENV === 'production' ? '/madame-x-mansion' : '';
-
 export default function Home() {
   return (
     <>
@@ -12,7 +10,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`${basePath}/images/madame-x-study.jpg`}
+            src="/madame-x-mansion/images/madame-x-study.jpg"
             alt="Study of Madame Gautreau"
             className="w-full h-full object-cover opacity-20 blur-[1px] scale-110"
             style={{ objectPosition: 'center 20%' }}
