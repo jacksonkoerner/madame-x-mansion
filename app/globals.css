@@ -227,10 +227,11 @@ a:hover {
   transition: opacity 0.1s linear;
 }
 .scroll-sequence-layer img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 15%;
+  max-height: 80%;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 .scroll-text-overlay {
   position: absolute;

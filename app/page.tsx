@@ -6,14 +6,21 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative h-screen min-h-[600px] flex flex-col justify-center items-center text-center overflow-hidden">
-        {/* Background painting */}
-        <div className="absolute inset-0 z-0">
+        {/* Background painting — contained like a gallery piece */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/madame-x-mansion/images/madame-x-study.jpg"
             alt="Study of Madame Gautreau"
-            className="w-full h-full object-cover opacity-20 blur-[1px] scale-110"
-            style={{ objectPosition: 'center 20%' }}
+            className="max-h-[85%] w-auto opacity-15 blur-[2px]"
+            style={{ filter: 'blur(2px) brightness(0.7)' }}
+          />
+          {/* Radial vignette — fades painting into the dark background */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'radial-gradient(ellipse 50% 60% at center, transparent 0%, var(--black) 100%)',
+            }}
           />
         </div>
 

@@ -113,7 +113,7 @@ export default function ScrollSequence() {
         {/* Dark base layer */}
         <div style={{ position: 'absolute', inset: 0, background: '#0a0a0a' }} />
 
-        {/* Image layers */}
+        {/* Image layers — gallery-style contained paintings */}
         {layers.map((layer, i) => (
           <div
             key={i}
@@ -122,6 +122,9 @@ export default function ScrollSequence() {
               inset: 0,
               opacity: getLayerOpacity(i),
               willChange: 'opacity',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -129,14 +132,24 @@ export default function ScrollSequence() {
               src={layer.src}
               alt={layer.alt}
               style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: i === 2 ? 'center center' : 'center 15%',
+                maxHeight: '80%',
+                maxWidth: '90%',
+                width: 'auto',
+                height: 'auto',
+                objectFit: 'contain',
+                filter: 'brightness(0.85)',
               }}
             />
-            {/* Dark overlay for readability */}
-            <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.35)' }} />
+            {/* Radial vignette — gallery spotlight fading into darkness */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background: i === 2
+                  ? 'radial-gradient(ellipse 60% 55% at center, transparent 0%, rgba(10,10,10,0.4) 50%, #0a0a0a 100%)'
+                  : 'radial-gradient(ellipse 40% 55% at center, transparent 0%, rgba(10,10,10,0.4) 50%, #0a0a0a 100%)',
+              }}
+            />
           </div>
         ))}
 
