@@ -353,7 +353,7 @@ ul {
 /* === SCROLL SEQUENCE (HOME) === */
 .scroll-sequence {
   position: relative;
-  height: 200vh;
+  height: 180vh;
 }
 .scroll-sequence-sticky {
   position: sticky;
@@ -429,9 +429,25 @@ ul {
   color: #c5a55a;
 }
 
+/* === TRANSITION SECTION === */
+.section-transition {
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  background: var(--black);
+}
+.section-transition .transition-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--lavender);
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
 /* === TEASER CARDS (HOME) === */
 .teaser-section {
-  padding: 4rem 2rem 6rem;
+  padding: 2rem 2rem 6rem;
   background: var(--black);
 }
 .teaser-grid {
