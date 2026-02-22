@@ -78,15 +78,21 @@ ul {
   background-size: 256px 256px;
 }
 
-/* === TEXTURE BACKGROUNDS === */
-.texture-bg {
-  position: absolute;
+/* === TEXTURE BACKGROUNDS (fixed, crossfade) === */
+.texture-bg-fixed {
+  position: fixed;
   inset: 0;
   background-size: cover;
   background-position: center;
   z-index: 0;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1.0s ease;
+  pointer-events: none;
+}
+
+/* Per-section overlays still sit inside each section */
+.texture-bg {
+  display: none; /* replaced by fixed system */
 }
 
 .texture-overlay {
@@ -227,6 +233,12 @@ section > *:not(.texture-bg):not(.texture-overlay) {
   z-index: 2;
 }
 
+/* Make sure main content sits above fixed bg layers */
+main, .site-footer, .site-nav {
+  position: relative;
+  z-index: 1;
+}
+
 .section-ornament {
   display: flex;
   align-items: center;
@@ -355,12 +367,12 @@ section > *:not(.texture-bg):not(.texture-overlay) {
 
 /* === PAGE HERO (inner pages) === */
 .page-hero {
-  min-height: 60vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 8rem 2rem 4rem;
+  padding: 7rem 2rem 3rem;
 }
 
 .page-hero.page-hero-short {
@@ -623,7 +635,7 @@ section > *:not(.texture-bg):not(.texture-overlay) {
 
 /* === STORY PAGE === */
 .story-section {
-  padding: 4rem 2rem 6rem;
+  padding: 2rem 2rem 4rem;
 }
 
 .story-content-wrap {
@@ -634,12 +646,12 @@ section > *:not(.texture-bg):not(.texture-overlay) {
 }
 
 .story-featured-image {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
 .story-featured-image img {
-  max-height: 600px;
+  max-height: 500px;
   margin: 0 auto;
   border: 1px solid var(--border-subtle);
 }
@@ -660,7 +672,7 @@ section > *:not(.texture-bg):not(.texture-overlay) {
 }
 
 .beat-card {
-  padding: 2.5rem 2rem;
+  padding: 1.5rem 2rem;
   border-left: 1px solid var(--border-subtle);
   margin-left: 1rem;
   opacity: 0;
@@ -697,7 +709,7 @@ section > *:not(.texture-bg):not(.texture-overlay) {
 }
 
 .story-inline-image {
-  margin: 2rem 0 2rem 1rem;
+  margin: 1rem 0 1rem 1rem;
   padding-left: 2rem;
   border-left: 1px solid var(--border-subtle);
   opacity: 0;
@@ -717,7 +729,7 @@ section > *:not(.texture-bg):not(.texture-overlay) {
 
 /* === BUILDING SECTION (on story page) === */
 .building-section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .building-content {

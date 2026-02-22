@@ -1,5 +1,6 @@
 /* ================================================
    MADAME X MANSION — Shared JavaScript
+   Fixed texture crossfade + UI
    ================================================ */
 
 (function() {
@@ -21,8 +22,10 @@
     });
   }
 
-  // --- Texture Background Scroll Fading ---
-  var textureBgs = document.querySelectorAll('.texture-bg');
+  // --- Fixed Texture Background System ---
+  // Create fixed background layers (one per texture) that sit behind everything.
+  // As you scroll, the texture assigned to the current section fades in, others fade out.
+
   var textureMap = {
     'gold-leaf': 'images/textures/bg-gold-leaf.jpg',
     'damask': 'images/textures/bg-damask.jpg',
@@ -31,37 +34,61 @@
     'ironwork': 'images/textures/bg-ironwork.jpg'
   };
 
-  textureBgs.forEach(function(el) {
-    var name = el.getAttribute('data-texture');
-    if (name && textureMap[name]) {
-      el.style.backgroundImage = 'url(' + textureMap[name] + ')';
-      el.style.backgroundSize = 'cover';
-      el.style.backgroundPosition = 'center';
-      el.style.position = 'absolute';
-      el.style.inset = '0';
-      el.style.opacity = '0';
-      el.style.transition = 'opacity 1.2s ease';
-      el.style.zIndex = '0';
+  var fixedLayers = {};
+  var container = document.createElement('div');
+  container.style.cssText = 'position:fixed;inset:0;z-index:0;pointer-events:none;';
+  document.body.insertBefore(container, document.body.firstChild);
+
+  Object.keys(textureMap).forEach(function(name) {
+    var div = document.createElement('div');
+    div.className = 'texture-bg-fixed';
+    div.style.backgroundImage = 'url(' + textureMap[name] + ')';
+    div.style.opacity = '0';
+    container.appendChild(div);
+    fixedLayers[name] = div;
+  });
+
+  // Build a list of sections and which texture they use
+  var sectionTextures = [];
+  var allSections = document.querySelectorAll('section');
+  allSections.forEach(function(sec) {
+    var texEl = sec.querySelector('[data-texture]');
+    if (texEl) {
+      sectionTextures.push({
+        el: sec,
+        texture: texEl.getAttribute('data-texture')
+      });
     }
   });
 
-  // Fade textures in as their section enters viewport
-  function handleTextureScroll() {
-    textureBgs.forEach(function(el) {
-      var section = el.parentElement;
-      if (!section) return;
-      var rect = section.getBoundingClientRect();
-      var vh = window.innerHeight;
-      // Start fading in when section is 20% into viewport
-      var progress = 1 - (rect.top / (vh * 0.8));
-      if (progress < 0) progress = 0;
-      if (progress > 1) progress = 1;
-      el.style.opacity = progress;
-    });
+  var currentTexture = null;
+
+  function updateFixedBg() {
+    var vh = window.innerHeight;
+    var midY = vh * 0.4; // check what's at 40% of viewport height
+    var activeTexture = null;
+
+    for (var i = sectionTextures.length - 1; i >= 0; i--) {
+      var rect = sectionTextures[i].el.getBoundingClientRect();
+      if (rect.top <= midY && rect.bottom > 0) {
+        activeTexture = sectionTextures[i].texture;
+        break;
+      }
+    }
+
+    if (activeTexture && activeTexture !== currentTexture) {
+      currentTexture = activeTexture;
+      Object.keys(fixedLayers).forEach(function(name) {
+        fixedLayers[name].style.opacity = (name === activeTexture) ? '1' : '0';
+      });
+    }
   }
 
-  window.addEventListener('scroll', handleTextureScroll, { passive: true });
-  handleTextureScroll(); // Initial check
+  window.addEventListener('scroll', updateFixedBg, { passive: true });
+  // Run once on load
+  updateFixedBg();
+  // Also run after a short delay for initial paint
+  setTimeout(updateFixedBg, 100);
 
   // --- Reveal Animations ---
   var revealElements = document.querySelectorAll('[data-reveal], .beat-card, .apartment-card, .story-inline-image');
@@ -99,7 +126,6 @@
         btn.style.color = 'var(--black)';
         btn.disabled = true;
       }
-      // In the future, this will POST to the backend
     });
   }
 
