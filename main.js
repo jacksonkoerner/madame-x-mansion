@@ -48,15 +48,17 @@
   }
 
   // --- Fixed Texture Background System ---
-  // Create fixed background layers (one per texture) that sit behind everything.
-  // As you scroll, the texture assigned to the current section fades in, others fade out.
+  // Textures are evenly distributed across the total scroll length of the page.
+  // Brick is always last. The JS measures page height and divides evenly.
 
-  var textureMap = {
+  // Fixed order: gold-leaf → damask → ironwork → inkwash → brick (always last)
+  var textureOrder = ['gold-leaf', 'damask', 'ironwork', 'inkwash', 'brick'];
+  var texturePaths = {
     'gold-leaf': 'images/textures/bg-gold-leaf.jpg',
     'damask': 'images/textures/bg-damask.jpg',
-    'brick': 'images/textures/bg-brick.jpg',
+    'ironwork': 'images/textures/bg-ironwork.jpg',
     'inkwash': 'images/textures/bg-inkwash.jpg',
-    'ironwork': 'images/textures/bg-ironwork.jpg'
+    'brick': 'images/textures/bg-brick.jpg'
   };
 
   var fixedLayers = {};
@@ -64,10 +66,10 @@
   container.style.cssText = 'position:fixed;inset:0;z-index:0;pointer-events:none;';
   document.body.insertBefore(container, document.body.firstChild);
 
-  Object.keys(textureMap).forEach(function(name) {
+  textureOrder.forEach(function(name) {
     var div = document.createElement('div');
     div.className = 'texture-bg-fixed';
-    div.style.backgroundImage = 'url(' + textureMap[name] + ')';
+    div.style.backgroundImage = 'url(' + texturePaths[name] + ')';
     div.style.opacity = '0';
     container.appendChild(div);
     fixedLayers[name] = div;
@@ -78,47 +80,45 @@
   overlay.className = 'texture-overlay-fixed';
   container.appendChild(overlay);
 
-  // Build a list of sections and which texture they use
-  var sectionTextures = [];
-  var allSections = document.querySelectorAll('section');
-  allSections.forEach(function(sec) {
-    var texEl = sec.querySelector('[data-texture]');
-    if (texEl) {
-      sectionTextures.push({
-        el: sec,
-        texture: texEl.getAttribute('data-texture')
-      });
-    }
-  });
-
-  var currentTexture = null;
+  var currentTextureIndex = -1;
 
   function updateFixedBg() {
-    var vh = window.innerHeight;
-    var midY = vh * 0.4; // check what's at 40% of viewport height
-    var activeTexture = null;
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight;
+    var viewHeight = window.innerHeight;
+    var maxScroll = docHeight - viewHeight;
 
-    for (var i = sectionTextures.length - 1; i >= 0; i--) {
-      var rect = sectionTextures[i].el.getBoundingClientRect();
-      if (rect.top <= midY && rect.bottom > 0) {
-        activeTexture = sectionTextures[i].texture;
-        break;
+    if (maxScroll <= 0) {
+      // Page fits in viewport, show first texture
+      if (currentTextureIndex !== 0) {
+        currentTextureIndex = 0;
+        textureOrder.forEach(function(name, i) {
+          fixedLayers[name].style.opacity = (i === 0) ? '1' : '0';
+        });
       }
+      return;
     }
 
-    if (activeTexture && activeTexture !== currentTexture) {
-      currentTexture = activeTexture;
-      Object.keys(fixedLayers).forEach(function(name) {
-        fixedLayers[name].style.opacity = (name === activeTexture) ? '1' : '0';
+    // Calculate which texture we should be showing based on scroll position
+    var progress = scrollTop / maxScroll; // 0 to 1
+    var count = textureOrder.length;
+    var index = Math.floor(progress * count);
+    if (index >= count) index = count - 1;
+
+    if (index !== currentTextureIndex) {
+      currentTextureIndex = index;
+      textureOrder.forEach(function(name, i) {
+        fixedLayers[name].style.opacity = (i === index) ? '1' : '0';
       });
     }
   }
 
   window.addEventListener('scroll', updateFixedBg, { passive: true });
-  // Run once on load
+  window.addEventListener('resize', updateFixedBg, { passive: true });
   updateFixedBg();
-  // Also run after a short delay for initial paint
   setTimeout(updateFixedBg, 100);
+  // Recalculate after images load (page height may change)
+  window.addEventListener('load', updateFixedBg);
 
   // --- Reveal Animations ---
   var revealElements = document.querySelectorAll('[data-reveal], .beat-card, .apartment-card, .story-inline-image');
