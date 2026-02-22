@@ -204,11 +204,11 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 10, 10, 0.98);
-  padding: 6rem 2rem 2rem;
+  background: #0a0a0a;
+  padding: 5rem 2rem 2rem;
   flex-direction: column;
   gap: 1.5rem;
-  z-index: 999;
+  z-index: 9998;
 }
 
 .nav-mobile.open {
@@ -227,15 +227,15 @@ ul {
 
 .nav-mobile a.active { color: var(--gold); }
 
-/* Make sure toggle sits above the mobile overlay */
+/* Make sure toggle and brand sit above the mobile overlay */
 .nav-toggle {
   position: relative;
-  z-index: 1001;
+  z-index: 9999;
 }
 
 .nav-brand {
   position: relative;
-  z-index: 1001;
+  z-index: 9999;
 }
 
 @media (max-width: 768px) {
