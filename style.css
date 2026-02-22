@@ -90,20 +90,27 @@ ul {
   pointer-events: none;
 }
 
-/* Per-section overlays still sit inside each section */
+/* Per-section texture divs hidden — replaced by fixed layers in JS */
 .texture-bg {
-  display: none; /* replaced by fixed system */
+  display: none;
 }
 
-.texture-overlay {
-  position: absolute;
+/* Fixed overlay sits on top of fixed textures, below content */
+.texture-overlay-fixed {
+  position: fixed;
   inset: 0;
-  background: rgba(10, 10, 10, 0.55);
-  z-index: 1;
+  background: rgba(10, 10, 10, 0.6);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Per-section overlays no longer needed — keep transparent for spacing */
+.texture-overlay {
+  display: none;
 }
 
 .texture-overlay.overlay-heavy {
-  background: rgba(10, 10, 10, 0.72);
+  display: none;
 }
 
 /* === NAVIGATION === */

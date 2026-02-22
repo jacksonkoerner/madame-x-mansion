@@ -48,6 +48,11 @@
     fixedLayers[name] = div;
   });
 
+  // Single fixed overlay on top of textures, below content
+  var overlay = document.createElement('div');
+  overlay.className = 'texture-overlay-fixed';
+  container.appendChild(overlay);
+
   // Build a list of sections and which texture they use
   var sectionTextures = [];
   var allSections = document.querySelectorAll('section');
