@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Madame X Mansion — 927 Toulouse Street, New Orleans</title>
-  <meta name="description" content="Where scandal meets splendor. A storied French Quarter address with luxury apartments at 927 Toulouse Street, New Orleans. Est. 1825.">
+  <meta name="description" content="Where scandal meets splendor. Luxury apartments at 927 Toulouse Street in the heart of the French Quarter. Est. 1825.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -22,104 +22,114 @@
       </button>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
-        <a href="story.html">Story</a>
-        <a href="building.html">The Building</a>
+        <a href="story.html">The Story</a>
         <a href="apartments.html">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-mobile" id="nav-mobile">
         <a href="index.html" class="active">Home</a>
-        <a href="story.html">Story</a>
-        <a href="building.html">The Building</a>
+        <a href="story.html">The Story</a>
         <a href="apartments.html">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <main class="page-enter">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg">
-        <img src="images/madame-x-study.jpg" alt="Study of Madame Gautreau">
-        <div class="hero-vignette"></div>
-      </div>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+      <div class="texture-bg" data-texture="gold-leaf"></div>
+      <div class="texture-overlay"></div>
       <div class="hero-content">
-        <div class="hero-star">&#10022;</div>
-        <h1>The Madame X<br>Mansion</h1>
+        <div class="hero-ornament">&#10022;</div>
+        <h1 class="font-display">The Madame X<br>Mansion</h1>
         <p class="hero-address">927 Toulouse Street &middot; French Quarter &middot; New Orleans</p>
-        <p class="hero-tagline">Where scandal meets splendor. Est. 1825.</p>
-        <div class="hero-star">&#10022;</div>
+        <p class="hero-tagline">Where scandal meets splendor.</p>
+        <div class="hero-ornament">&#10022;</div>
+        <div class="hero-ctas">
+          <a href="story.html" class="btn-outline">Discover the Story</a>
+          <a href="apartments.html" class="btn-gold">View Apartments</a>
+        </div>
       </div>
       <div class="hero-scroll">
-        <span class="hero-scroll-text">Discover the story</span>
+        <span class="hero-scroll-text">Scroll</span>
         <div class="hero-scroll-arrow">&darr;</div>
       </div>
     </section>
 
-    <!-- SCROLL IMAGE SEQUENCE -->
-    <div class="scroll-sequence" id="scroll-sequence">
-      <div class="scroll-sequence-sticky">
-        <div class="scroll-sequence-base"></div>
-
-        <div class="scroll-sequence-layer" id="layer-0" style="opacity: 1;">
-          <img src="images/madame-x-study.jpg" alt="Preparatory study sketch of Madame Gautreau by Sargent">
-          <div class="vignette" style="background: radial-gradient(ellipse 40% 55% at center, transparent 0%, rgba(10,10,10,0.4) 50%, #0a0a0a 100%);"></div>
+    <!-- INTRO SECTION -->
+    <section class="intro-section" id="intro">
+      <div class="texture-bg" data-texture="damask"></div>
+      <div class="texture-overlay"></div>
+      <div class="intro-content">
+        <div class="section-ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond">&#9670;</span>
+          <span class="ornament-line"></span>
         </div>
-        <div class="scroll-sequence-layer" id="layer-1" style="opacity: 0;">
-          <img src="images/madame-x-painting.jpg" alt="Portrait of Madame X by John Singer Sargent, 1884">
-          <div class="vignette" style="background: radial-gradient(ellipse 40% 55% at center, transparent 0%, rgba(10,10,10,0.4) 50%, #0a0a0a 100%);"></div>
-        </div>
-        <div class="scroll-sequence-layer" id="layer-2" style="opacity: 0;">
-          <img src="images/studio-photo.jpg" alt="Sargent standing beside the Madame X painting in his studio">
-          <div class="vignette" style="background: radial-gradient(ellipse 60% 55% at center, transparent 0%, rgba(10,10,10,0.4) 50%, #0a0a0a 100%);"></div>
-        </div>
-
-        <div class="scroll-text-overlay">
-          <div class="scroll-text-panel" id="scroll-text-panel">
-            <p id="scroll-text">In 1859, a girl was born in this mansion who would grow up to become the most scandalous woman in Paris.</p>
-          </div>
-        </div>
-
-        <div class="scroll-indicator" id="scroll-indicator">Scroll to explore</div>
+        <p class="intro-text font-display">
+          In 1859, a girl was born in this mansion who would grow up to become the most scandalous woman in Paris &mdash; and the subject of one of America&rsquo;s most famous paintings.
+        </p>
+        <p class="intro-sub">
+          Nearly two centuries later, her mansion still stands. Seven distinct residences in the heart of the French Quarter, where history lives in every room.
+        </p>
+        <a href="story.html" class="text-link">Read Her Story &rarr;</a>
       </div>
-    </div>
-
-    <!-- TRANSITION -->
-    <section class="section-transition">
-      <div class="section-ornament">
-        <span class="ornament-line"></span>
-        <span class="ornament-diamond">&#9670;</span>
-        <span class="ornament-line"></span>
-      </div>
-      <p class="transition-text">Nearly two centuries later, her mansion still stands.</p>
     </section>
 
-    <!-- TEASER CARDS -->
-    <section class="teaser-section">
-      <div class="teaser-grid">
-        <a href="story.html" class="teaser-card">
-          <div class="teaser-icon">&#10022;</div>
-          <h3>Her Story</h3>
-          <p>From New Orleans Creole royalty to the scandal that shook the Paris Salon of 1884.</p>
-          <span class="teaser-link">Read Her Story &rarr;</span>
-        </a>
-        <a href="apartments.html" class="teaser-card">
-          <div class="teaser-icon">&#10022;</div>
-          <h3>The Apartments</h3>
-          <p>Seven distinct residences in the heart of the French Quarter. From $600 to 1,150 sq ft.</p>
-          <span class="teaser-link">View Available Units &rarr;</span>
-        </a>
-        <a href="building.html" class="teaser-card">
-          <div class="teaser-icon">&#10022;</div>
-          <h3>The Building</h3>
-          <p>A three-story Creole townhouse with porte-coch&egrave;re, courtyard, and nearly two centuries of history.</p>
-          <span class="teaser-link">Explore the Building &rarr;</span>
-        </a>
+    <!-- APARTMENT PREVIEW -->
+    <section class="preview-section" id="preview">
+      <div class="texture-bg" data-texture="brick"></div>
+      <div class="texture-overlay"></div>
+      <div class="preview-content">
+        <h2 class="font-display section-title">The Apartments</h2>
+        <p class="section-sub">Seven residences, each with its own character &mdash; from courtyard retreats to balconied perches overlooking Toulouse Street.</p>
+        <div class="preview-grid">
+          <a href="apartment-1.html" class="preview-card">
+            <div class="preview-card-img placeholder-img">
+              <span class="placeholder-label">Photo Coming Soon</span>
+            </div>
+            <div class="preview-card-info">
+              <h3>Unit 1</h3>
+              <span class="unit-specs">1 BR / 1 BA &middot; ~600&ndash;800 sq ft</span>
+              <span class="unit-detail">First floor &middot; Toulouse Street access</span>
+            </div>
+          </a>
+          <a href="apartment-2.html" class="preview-card">
+            <div class="preview-card-img placeholder-img">
+              <span class="placeholder-label">Photo Coming Soon</span>
+            </div>
+            <div class="preview-card-info">
+              <h3>Unit 2</h3>
+              <span class="unit-specs">2 BR &middot; ~1,000&ndash;1,150 sq ft</span>
+              <span class="unit-detail">Second floor &middot; Private balcony</span>
+            </div>
+          </a>
+          <a href="apartment-5.html" class="preview-card">
+            <div class="preview-card-img placeholder-img">
+              <span class="placeholder-label">Photo Coming Soon</span>
+            </div>
+            <div class="preview-card-info">
+              <h3>Unit 5</h3>
+              <span class="unit-specs">1 BR / 1 BA &middot; ~600&ndash;800 sq ft</span>
+              <span class="unit-detail">First floor &middot; Courtyard access</span>
+            </div>
+          </a>
+        </div>
+        <div class="preview-more">
+          <a href="apartments.html" class="btn-gold">View All Apartments &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="cta">
+      <div class="texture-bg" data-texture="inkwash"></div>
+      <div class="texture-overlay"></div>
+      <div class="cta-content">
+        <h2 class="font-display">Make History Your Home</h2>
+        <p>Inquire about available units and schedule a private tour of the mansion.</p>
+        <a href="contact.html" class="btn-gold-lg">Get in Touch &rarr;</a>
       </div>
     </section>
   </main>
@@ -130,117 +140,20 @@
       <div class="footer-brand">Madame X Mansion</div>
       <p class="footer-sub">Est. 1825 &middot; French Quarter &middot; New Orleans</p>
       <nav class="footer-nav">
-        <a href="story.html">Story</a>
-        <a href="building.html">Building</a>
+        <a href="story.html">The Story</a>
         <a href="apartments.html">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-contact">
         927 Toulouse Street, New Orleans, LA 70112<br>
-        <a href="tel:+15045551825">(504) 555-1825</a> &middot;
         <a href="mailto:leasing@madamexmansion.com">leasing@madamexmansion.com</a>
       </p>
       <div class="footer-divider"></div>
-      <p class="footer-legal">Equal Housing Opportunity. All information deemed reliable but not guaranteed. Contact us for current availability and pricing.</p>
+      <p class="footer-legal">Equal Housing Opportunity. All information deemed reliable but not guaranteed.</p>
       <p class="footer-copyright">&copy; 2025 Madame X LLC. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Navigation scroll effect
-    const nav = document.getElementById('site-nav');
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 80) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    // Mobile menu toggle
-    const toggle = document.getElementById('nav-toggle');
-    const mobileMenu = document.getElementById('nav-mobile');
-    toggle.addEventListener('click', function() {
-      toggle.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-
-    // Scroll sequence
-    (function() {
-      var container = document.getElementById('scroll-sequence');
-      var layers = [
-        document.getElementById('layer-0'),
-        document.getElementById('layer-1'),
-        document.getElementById('layer-2')
-      ];
-      var textPanel = document.getElementById('scroll-text-panel');
-      var textEl = document.getElementById('scroll-text');
-      var indicator = document.getElementById('scroll-indicator');
-
-      var texts = [
-        'In 1859, a girl was born in this mansion who would grow up to become the most scandalous woman in Paris.',
-        'She became the most scandalous woman in Paris.',
-        "And the subject of one of America's most famous paintings."
-      ];
-
-      function getLayerOpacity(index, progress) {
-        if (index === 0) {
-          if (progress <= 0.20) return 1;
-          if (progress <= 0.45) return 1 - (progress - 0.20) / 0.25;
-          return 0;
-        }
-        if (index === 1) {
-          if (progress <= 0.20) return 0;
-          if (progress <= 0.45) return (progress - 0.20) / 0.25;
-          if (progress <= 0.55) return 1;
-          if (progress <= 0.80) return 1 - (progress - 0.55) / 0.25;
-          return 0;
-        }
-        if (progress <= 0.55) return 0;
-        if (progress <= 0.80) return (progress - 0.55) / 0.25;
-        return 1;
-      }
-
-      function getActiveText(progress) {
-        if (progress < 0.30) return 0;
-        if (progress < 0.65) return 1;
-        return 2;
-      }
-
-      function getTextOpacity(progress) {
-        var idx = getActiveText(progress);
-        var ranges = [[0.03, 0.25], [0.33, 0.58], [0.68, 0.92]];
-        var start = ranges[idx][0], end = ranges[idx][1];
-        var fadeIn = start + (end - start) * 0.2;
-        var fadeOut = end - (end - start) * 0.15;
-        if (progress < start) return 0;
-        if (progress < fadeIn) return (progress - start) / (fadeIn - start);
-        if (progress < fadeOut) return 1;
-        if (progress < end) return 1 - (progress - fadeOut) / (end - fadeOut);
-        return 0;
-      }
-
-      window.addEventListener('scroll', function() {
-        var rect = container.getBoundingClientRect();
-        var containerHeight = container.offsetHeight;
-        var viewportHeight = window.innerHeight;
-        var scrolled = -rect.top;
-        var totalScroll = containerHeight - viewportHeight;
-        if (totalScroll <= 0) return;
-        var progress = Math.max(0, Math.min(1, scrolled / totalScroll));
-
-        for (var i = 0; i < 3; i++) {
-          layers[i].style.opacity = getLayerOpacity(i, progress);
-        }
-
-        var activeIdx = getActiveText(progress);
-        textEl.textContent = texts[activeIdx];
-        textPanel.style.opacity = getTextOpacity(progress);
-        indicator.style.opacity = progress < 0.1 ? 0.5 : 0;
-      }, { passive: true });
-    })();
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

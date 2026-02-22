@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apartments — Madame X Mansion</title>
-  <meta name="description" content="Seven distinct residences at 927 Toulouse Street. View available units in the heart of the French Quarter.">
+  <meta name="description" content="Seven luxury apartments in the heart of the French Quarter at 927 Toulouse Street. View available units at the Madame X Mansion.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -22,124 +22,205 @@
       </button>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="story.html">Story</a>
-        <a href="building.html">The Building</a>
+        <a href="story.html">The Story</a>
         <a href="apartments.html" class="active">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-mobile" id="nav-mobile">
         <a href="index.html">Home</a>
-        <a href="story.html">Story</a>
-        <a href="building.html">The Building</a>
+        <a href="story.html">The Story</a>
         <a href="apartments.html" class="active">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <main class="page-enter">
-    <section class="page-header">
-      <div class="section-ornament">
-        <span class="ornament-line"></span>
-        <span class="ornament-diamond">&#9670;</span>
-        <span class="ornament-line"></span>
+  <main>
+    <!-- HERO -->
+    <section class="page-hero page-hero-short">
+      <div class="texture-bg" data-texture="gold-leaf"></div>
+      <div class="texture-overlay"></div>
+      <div class="page-hero-content">
+        <div class="section-ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond">&#9670;</span>
+          <span class="ornament-line"></span>
+        </div>
+        <h1 class="font-display">The Apartments</h1>
+        <p class="page-hero-sub">Seven distinct residences, each with its own character &mdash; from courtyard-facing retreats to balconied perches overlooking Toulouse Street.</p>
       </div>
-      <h1>The Apartments</h1>
-      <p class="subtitle">Seven distinct residences, each with its own character &mdash; from courtyard-facing retreats to balconied perches overlooking Toulouse Street.</p>
     </section>
 
-    <!-- Cards -->
-    <section>
-      <div class="apartments-grid">
-        <!-- Unit 1 -->
-        <div class="apartment-card">
-          <div class="apartment-header">
-            <span class="apartment-unit">Unit 1</span>
-            <span class="apartment-type">1 BR / 1 BA</span>
-          </div>
-          <p class="apartment-sqft">~600&ndash;800 sq ft</p>
-          <ul class="apartment-features">
-            <li>Extra-large first floor layout</li>
-            <li>Doors open directly to Toulouse Street</li>
-            <li>Hardwood floors throughout</li>
-            <li>Shared courtyard access</li>
-            <li>On-site washer &amp; dryer</li>
-          </ul>
-          <div class="apartment-footer">
-            <span class="apartment-price">Inquire for Pricing</span>
-            <a href="apply.html" class="btn-gold">Inquire</a>
-          </div>
-        </div>
+    <!-- APARTMENT GRID -->
+    <section class="apartments-grid-section">
+      <div class="texture-bg" data-texture="damask"></div>
+      <div class="texture-overlay overlay-heavy"></div>
+      <div class="apartments-grid-content">
 
-        <!-- Unit 2 (Featured) -->
-        <div class="apartment-card featured">
-          <div class="apartment-header">
-            <span class="apartment-unit">Unit 2</span>
-            <span class="apartment-type">2 BR</span>
+        <!-- Unit 1 -->
+        <a href="apartment-1.html" class="apartment-card" data-reveal>
+          <div class="apartment-card-image placeholder-img">
+            <span class="placeholder-label">Photo Coming Soon</span>
           </div>
-          <p class="apartment-sqft">~1,000&ndash;1,150 sq ft</p>
-          <ul class="apartment-features">
-            <li>Second floor with private Toulouse St. balcony</li>
-            <li>Optional gated parking</li>
-            <li>Granite kitchen, stainless appliances</li>
-            <li>In-unit washer &amp; dryer</li>
-            <li>Chandelier lighting &amp; crown molding</li>
-            <li>Central AC &amp; heat</li>
-          </ul>
-          <div class="apartment-footer">
-            <span class="apartment-price">Inquire for Pricing</span>
-            <a href="apply.html" class="btn-gold">Inquire</a>
+          <div class="apartment-card-body">
+            <div class="apartment-card-header">
+              <h3 class="font-display">Unit 1</h3>
+              <span class="apartment-badge">1 BR / 1 BA</span>
+            </div>
+            <span class="apartment-size">~600&ndash;800 sq ft</span>
+            <ul class="apartment-highlights">
+              <li>Extra-large first floor layout</li>
+              <li>Doors open directly to Toulouse Street</li>
+              <li>Hardwood floors throughout</li>
+              <li>Shared courtyard access</li>
+              <li>On-site washer &amp; dryer</li>
+            </ul>
+            <div class="apartment-card-footer">
+              <span class="apartment-price">Inquire for Pricing</span>
+              <span class="apartment-link">View Details &rarr;</span>
+            </div>
           </div>
-        </div>
+        </a>
+
+        <!-- Unit 2 -->
+        <a href="apartment-2.html" class="apartment-card" data-reveal>
+          <div class="apartment-card-image placeholder-img">
+            <span class="placeholder-label">Photo Coming Soon</span>
+          </div>
+          <div class="apartment-card-body">
+            <div class="apartment-card-header">
+              <h3 class="font-display">Unit 2</h3>
+              <span class="apartment-badge">2 BR</span>
+            </div>
+            <span class="apartment-size">~1,000&ndash;1,150 sq ft</span>
+            <ul class="apartment-highlights">
+              <li>Second floor with private Toulouse St. balcony</li>
+              <li>Optional gated parking</li>
+              <li>Granite kitchen, stainless appliances</li>
+              <li>In-unit washer &amp; dryer</li>
+              <li>Chandelier lighting &amp; crown molding</li>
+              <li>Central AC &amp; heat</li>
+            </ul>
+            <div class="apartment-card-footer">
+              <span class="apartment-price">Inquire for Pricing</span>
+              <span class="apartment-link">View Details &rarr;</span>
+            </div>
+          </div>
+        </a>
 
         <!-- Unit 5 -->
-        <div class="apartment-card">
-          <div class="apartment-header">
-            <span class="apartment-unit">Unit 5</span>
-            <span class="apartment-type">1 BR / 1 BA</span>
+        <a href="apartment-5.html" class="apartment-card" data-reveal>
+          <div class="apartment-card-image placeholder-img">
+            <span class="placeholder-label">Photo Coming Soon</span>
           </div>
-          <p class="apartment-sqft">~600&ndash;800 sq ft</p>
-          <ul class="apartment-features">
-            <li>First floor with courtyard access</li>
-            <li>Doors open directly to courtyard</li>
-            <li>Hardwood floors throughout</li>
-            <li>Stainless &amp; granite kitchen</li>
-            <li>Central AC &amp; heat</li>
-          </ul>
-          <div class="apartment-footer">
-            <span class="apartment-price">Inquire for Pricing</span>
-            <a href="apply.html" class="btn-gold">Inquire</a>
+          <div class="apartment-card-body">
+            <div class="apartment-card-header">
+              <h3 class="font-display">Unit 5</h3>
+              <span class="apartment-badge">1 BR / 1 BA</span>
+            </div>
+            <span class="apartment-size">~600&ndash;800 sq ft</span>
+            <ul class="apartment-highlights">
+              <li>First floor with courtyard access</li>
+              <li>Doors open directly to courtyard</li>
+              <li>Hardwood floors throughout</li>
+              <li>Stainless &amp; granite kitchen</li>
+              <li>Central AC &amp; heat</li>
+            </ul>
+            <div class="apartment-card-footer">
+              <span class="apartment-price">Inquire for Pricing</span>
+              <span class="apartment-link">View Details &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Placeholder units -->
+        <div class="apartment-card apartment-card-placeholder" data-reveal>
+          <div class="apartment-card-image placeholder-img placeholder-dim">
+            <span class="placeholder-label">Coming Soon</span>
+          </div>
+          <div class="apartment-card-body">
+            <div class="apartment-card-header">
+              <h3 class="font-display">Unit 3</h3>
+              <span class="apartment-badge">Details TBA</span>
+            </div>
+            <p class="placeholder-text">Unit details coming soon. Contact us for more information.</p>
           </div>
         </div>
+
+        <div class="apartment-card apartment-card-placeholder" data-reveal>
+          <div class="apartment-card-image placeholder-img placeholder-dim">
+            <span class="placeholder-label">Coming Soon</span>
+          </div>
+          <div class="apartment-card-body">
+            <div class="apartment-card-header">
+              <h3 class="font-display">Unit 4</h3>
+              <span class="apartment-badge">Details TBA</span>
+            </div>
+            <p class="placeholder-text">Unit details coming soon. Contact us for more information.</p>
+          </div>
+        </div>
+
+        <div class="apartment-card apartment-card-placeholder" data-reveal>
+          <div class="apartment-card-image placeholder-img placeholder-dim">
+            <span class="placeholder-label">Coming Soon</span>
+          </div>
+          <div class="apartment-card-body">
+            <div class="apartment-card-header">
+              <h3 class="font-display">Unit 6</h3>
+              <span class="apartment-badge">Details TBA</span>
+            </div>
+            <p class="placeholder-text">Unit details coming soon. Contact us for more information.</p>
+          </div>
+        </div>
+
+        <div class="apartment-card apartment-card-placeholder" data-reveal>
+          <div class="apartment-card-image placeholder-img placeholder-dim">
+            <span class="placeholder-label">Coming Soon</span>
+          </div>
+          <div class="apartment-card-body">
+            <div class="apartment-card-header">
+              <h3 class="font-display">Unit 7</h3>
+              <span class="apartment-badge">Details TBA</span>
+            </div>
+            <p class="placeholder-text">Unit details coming soon. Contact us for more information.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Amenities -->
+    <!-- AMENITIES -->
     <section class="amenities-section">
-      <h2>Common Amenities</h2>
-      <div class="amenities-tags">
-        <span class="amenity-tag">Hardwood Floors</span>
-        <span class="amenity-tag">Granite Countertops</span>
-        <span class="amenity-tag">Stainless Appliances</span>
-        <span class="amenity-tag">Central AC &amp; Heat</span>
-        <span class="amenity-tag">Washer &amp; Dryer</span>
-        <span class="amenity-tag">Water &amp; Trash Included</span>
-        <span class="amenity-tag">Security Lighting</span>
-        <span class="amenity-tag">Independent Meters</span>
-        <span class="amenity-tag">Non-Smoking Property</span>
-        <span class="amenity-tag">Pets Considered</span>
-        <span class="amenity-tag">Crown Molding</span>
-        <span class="amenity-tag">Chandelier Lighting</span>
+      <div class="texture-bg" data-texture="brick"></div>
+      <div class="texture-overlay overlay-heavy"></div>
+      <div class="amenities-content">
+        <h2 class="font-display section-title">Common Amenities</h2>
+        <div class="amenity-tags">
+          <span class="amenity-tag">Hardwood Floors</span>
+          <span class="amenity-tag">Granite Countertops</span>
+          <span class="amenity-tag">Stainless Appliances</span>
+          <span class="amenity-tag">Central AC &amp; Heat</span>
+          <span class="amenity-tag">Washer &amp; Dryer</span>
+          <span class="amenity-tag">Water &amp; Trash Included</span>
+          <span class="amenity-tag">Security Lighting</span>
+          <span class="amenity-tag">Independent Meters</span>
+          <span class="amenity-tag">Non-Smoking Property</span>
+          <span class="amenity-tag">Pets Considered</span>
+          <span class="amenity-tag">Crown Molding</span>
+          <span class="amenity-tag">Chandelier Lighting</span>
+        </div>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-section">
-      <a href="apply.html" class="btn-gold-lg">Apply Now &rarr;</a>
+      <div class="texture-bg" data-texture="inkwash"></div>
+      <div class="texture-overlay"></div>
+      <div class="cta-content">
+        <h2 class="font-display">Ready to make this home?</h2>
+        <p>Contact us to schedule a tour or begin your application.</p>
+        <a href="contact.html" class="btn-gold-lg">Apply Now &rarr;</a>
+      </div>
     </section>
   </main>
 
@@ -149,35 +230,20 @@
       <div class="footer-brand">Madame X Mansion</div>
       <p class="footer-sub">Est. 1825 &middot; French Quarter &middot; New Orleans</p>
       <nav class="footer-nav">
-        <a href="story.html">Story</a>
-        <a href="building.html">Building</a>
+        <a href="story.html">The Story</a>
         <a href="apartments.html">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-contact">
         927 Toulouse Street, New Orleans, LA 70112<br>
-        <a href="tel:+15045551825">(504) 555-1825</a> &middot;
         <a href="mailto:leasing@madamexmansion.com">leasing@madamexmansion.com</a>
       </p>
       <div class="footer-divider"></div>
-      <p class="footer-legal">Equal Housing Opportunity. All information deemed reliable but not guaranteed. Contact us for current availability and pricing.</p>
+      <p class="footer-legal">Equal Housing Opportunity. All information deemed reliable but not guaranteed.</p>
       <p class="footer-copyright">&copy; 2025 Madame X LLC. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    var nav = document.getElementById('site-nav');
-    window.addEventListener('scroll', function() {
-      nav.classList.toggle('scrolled', window.scrollY > 80);
-    });
-    var toggle = document.getElementById('nav-toggle');
-    var mobileMenu = document.getElementById('nav-mobile');
-    toggle.addEventListener('click', function() {
-      toggle.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

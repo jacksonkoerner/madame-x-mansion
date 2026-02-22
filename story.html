@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Story of Madame X — Madame X Mansion</title>
-  <meta name="description" content="The story of Virginie Amélie Avegno, born at 927 Toulouse Street in 1859, who became the most scandalous woman in Paris.">
+  <title>The Story — Madame X Mansion</title>
+  <meta name="description" content="The story of Virginie Amélie Avegno, born at 927 Toulouse Street in 1859, who became the most scandalous woman in Paris — and the building that started it all.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -22,110 +22,199 @@
       </button>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="story.html" class="active">Story</a>
-        <a href="building.html">The Building</a>
+        <a href="story.html" class="active">The Story</a>
         <a href="apartments.html">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="nav-mobile" id="nav-mobile">
         <a href="index.html">Home</a>
-        <a href="story.html" class="active">Story</a>
-        <a href="building.html">The Building</a>
+        <a href="story.html" class="active">The Story</a>
         <a href="apartments.html">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Fixed background images -->
-  <div class="story-bg-container">
-    <div class="story-bg-layer" id="bg-painting" style="opacity: 1;">
-      <img src="images/madame-x-painting.jpg" alt="">
-    </div>
-    <div class="story-bg-layer" id="bg-study" style="opacity: 0;">
-      <img src="images/madame-x-study.jpg" alt="">
-    </div>
-    <div class="story-bg-layer" id="bg-studio" style="opacity: 0;">
-      <img src="images/studio-photo.jpg" alt="">
-    </div>
-    <div class="story-bg-layer" id="bg-lachaume" style="opacity: 0;">
-      <img src="images/lachaume-ad.jpg" alt="">
-    </div>
-  </div>
-
-  <main class="page-enter">
-    <div class="story-content">
-      <section class="page-header" style="padding-top: 10rem; padding-bottom: 2rem; max-width: 800px; margin: 0 auto;">
+  <main>
+    <!-- STORY HERO -->
+    <section class="page-hero">
+      <div class="texture-bg" data-texture="ironwork"></div>
+      <div class="texture-overlay"></div>
+      <div class="page-hero-content">
         <div class="section-ornament">
           <span class="ornament-line"></span>
           <span class="ornament-diamond">&#9670;</span>
           <span class="ornament-line"></span>
         </div>
-        <h1 class="font-display" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; letter-spacing: 0.05em; margin-bottom: 1.5rem;">The Story of Madame X</h1>
-        <p style="font-size: 1.25rem; font-style: italic; color: var(--lavender); line-height: 1.6;">
-          In 1859, a girl was born in this mansion who would grow up to become the most scandalous woman in Paris &mdash; and the subject of one of America&rsquo;s most famous paintings.
-        </p>
-      </section>
+        <h1 class="font-display">The Story of<br>Madame X</h1>
+        <p class="page-hero-sub">A scandal. A painting. A mansion. Two centuries of history at 927 Toulouse Street.</p>
+      </div>
+    </section>
 
-      <section class="story-beats">
-        <div class="beat-card" data-bg="painting">
-          <span class="beat-date">1859</span>
-          <h3>Born in New Orleans</h3>
-          <p>Virginie Am&eacute;lie Avegno entered the world at 927 Toulouse Street, daughter of Anatole Placide Avegno &mdash; an Italian-French Creole &mdash; and Marie Virginie de Ternant, descended from French nobility raised at Parlange Plantation.</p>
+    <!-- HER STORY -->
+    <section class="story-section">
+      <div class="texture-bg" data-texture="damask"></div>
+      <div class="texture-overlay overlay-heavy"></div>
+      <div class="story-content-wrap">
+
+        <!-- Featured painting -->
+        <div class="story-featured-image">
+          <img src="images/madame-x-painting.jpg" alt="Portrait of Madame X by John Singer Sargent, 1884">
+          <p class="image-caption">Portrait of Madame X (Madame Pierre Gautreau) &mdash; John Singer Sargent, 1884. Oil on canvas. Metropolitan Museum of Art, New York.</p>
         </div>
 
-        <div class="beat-card" data-bg="painting">
-          <span class="beat-date">1862</span>
-          <h3>A Father Lost at Shiloh</h3>
-          <p>Major Avegno commanded the Avegno Zouaves &mdash; a famously cosmopolitan Confederate battalion of French, Spanish, Mexican, Irish, Italian, Chinese, German, Dutch, and Filipino soldiers. He was killed at the Battle of Shiloh. Am&eacute;lie was three years old.</p>
+        <div class="story-beats">
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">1859</span>
+            <h3>Born in New Orleans</h3>
+            <p>Virginie Am&eacute;lie Avegno entered the world at 927 Toulouse Street, daughter of Anatole Placide Avegno &mdash; an Italian-French Creole &mdash; and Marie Virginie de Ternant, descended from French nobility raised at Parlange Plantation.</p>
+          </div>
+
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">1862</span>
+            <h3>A Father Lost at Shiloh</h3>
+            <p>Major Avegno commanded the Avegno Zouaves &mdash; a famously cosmopolitan Confederate battalion of French, Spanish, Mexican, Irish, Italian, Chinese, German, Dutch, and Filipino soldiers. He was killed at the Battle of Shiloh. Am&eacute;lie was three years old.</p>
+          </div>
+
+          <!-- Side image -->
+          <div class="story-inline-image" data-reveal>
+            <img src="images/madame-x-study.jpg" alt="Study of Madame Gautreau by Sargent">
+            <p class="image-caption">Preparatory study for Portrait of Madame X &mdash; John Singer Sargent, c. 1883</p>
+          </div>
+
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">1867</span>
+            <h3>Paris Beckoned</h3>
+            <p>At eight years old, Am&eacute;lie and her mother fled the ruins of post-war New Orleans for Paris. Her sister Valentine had already been claimed by yellow fever the year before. She would never truly return to the city of her birth.</p>
+          </div>
+
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">1878</span>
+            <h3>La Belle Madame Gautreau</h3>
+            <p>At nineteen, she married Pierre Gautreau, a banker twice her age. Then she became Paris&rsquo;s most conspicuous beauty &mdash; powdering her skin with lavender, consuming arsenic for pallor, dyeing her hair with henna. The press called her &ldquo;a professional beauty.&rdquo; She worked hard at it.</p>
+          </div>
+
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">1883</span>
+            <h3>Sargent&rsquo;s Obsession</h3>
+            <p>John Singer Sargent, a young American expatriate desperate to make his name, sought her out. He wrote to a mutual friend: &ldquo;I have a great desire to paint her portrait&hellip; you might tell her that I am a man of prodigious talent.&rdquo; He offered to paint her for free. Two ambitious Americans, both betting everything on one canvas.</p>
+          </div>
+
+          <!-- Studio photo -->
+          <div class="story-inline-image" data-reveal>
+            <img src="images/studio-photo.jpg" alt="Sargent in his studio with the painting">
+            <p class="image-caption">John Singer Sargent in his studio with Portrait of Madame X, c. 1884</p>
+          </div>
+
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">1884</span>
+            <h3>The Scandal of 1884</h3>
+            <p>At the Paris Salon, the portrait ignited fury. The fallen shoulder strap, the bare skin, the deathly pallor &mdash; critics said standing before it, one &ldquo;would hear every curse word in the French language.&rdquo; Gautreau&rsquo;s mother begged Sargent to remove it. He refused. Both were driven into hiding.</p>
+          </div>
+
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">1884&ndash;1916</span>
+            <h3>A Masterpiece in Exile</h3>
+            <p>Sargent repainted the strap, fled to London, and kept the painting for over thirty years. When he finally sold it to the Metropolitan Museum of Art, he had one instruction: &ldquo;I should prefer that the picture should not be called by her name.&rdquo; He called it simply &ldquo;the best thing I have done.&rdquo;</p>
+          </div>
+
+          <div class="beat-card" data-reveal>
+            <span class="beat-date">Today</span>
+            <h3>The New Orleans Mona Lisa</h3>
+            <p>Now one of America&rsquo;s most famous paintings &mdash; sometimes called &ldquo;The New Orleans Mona Lisa&rdquo; &mdash; it hangs on permanent display at the Met. And it all began here, at 927 Toulouse Street.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE BUILDING -->
+    <section class="building-section">
+      <div class="texture-bg" data-texture="brick"></div>
+      <div class="texture-overlay overlay-heavy"></div>
+      <div class="building-content">
+        <div class="section-ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond">&#9670;</span>
+          <span class="ornament-line"></span>
+        </div>
+        <h2 class="font-display section-title">The Building</h2>
+        <p class="section-sub">Built between 1825 and 1830, this three-story masonry townhouse is a masterwork of Creole architecture.</p>
+
+        <div class="building-stats">
+          <div class="stat">
+            <span class="stat-value font-display">c. 1825</span>
+            <span class="stat-label">Year Built</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value font-display">8,500</span>
+            <span class="stat-label">Square Feet</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value font-display">3</span>
+            <span class="stat-label">Stories</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value font-display">7</span>
+            <span class="stat-label">Apartments</span>
+          </div>
         </div>
 
-        <div class="beat-card" data-bg="lachaume">
-          <span class="beat-date">1867</span>
-          <h3>Paris Beckoned</h3>
-          <p>At eight years old, Am&eacute;lie and her mother fled the ruins of post-war New Orleans for Paris, settling into an apartment at 45 Rue Cambon. She would never truly return. Her sister Valentine had already been claimed by yellow fever the year before.</p>
+        <div class="building-details">
+          <div class="detail-col">
+            <h3 class="detail-heading">Architecture</h3>
+            <ul class="detail-list">
+              <li>Masonry Porte-Coch&egrave;re Creole Townhouse</li>
+              <li>Pilasters at fa&ccedil;ade ends and between upper-floor openings</li>
+              <li>Refined dormers with unusual second-floor balcony railing</li>
+              <li>Toulouse Street-facing balconies on second &amp; third floors</li>
+              <li>Rear balconies overlooking the courtyard</li>
+              <li>Carriageway entrance to private courtyard</li>
+            </ul>
+          </div>
+          <div class="detail-col">
+            <h3 class="detail-heading">Modern Updates</h3>
+            <ul class="detail-list">
+              <li>New slate roof installed 2023</li>
+              <li>Full renovation completed 2012</li>
+              <li>Updated electrical, plumbing &amp; HVAC</li>
+              <li>Independent meters per unit</li>
+              <li>Property security lighting</li>
+              <li>Shared courtyard with pond &amp; water feature</li>
+              <li>Gated parking for 5+ vehicles</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="beat-card" data-bg="study">
-          <span class="beat-date">1878</span>
-          <h3>La Belle Madame Gautreau</h3>
-          <p>At nineteen, she married Pierre Gautreau, a banker twice her age. Then she became Paris&rsquo;s most conspicuous beauty &mdash; powdering her skin with lavender, consuming arsenic for pallor, dyeing her hair with henna. The press called her &ldquo;a professional beauty.&rdquo; She worked hard at it.</p>
+        <div class="building-location">
+          <h3 class="detail-heading">Location</h3>
+          <div class="location-grid">
+            <div class="location-info">
+              <p class="location-address"><strong>927 Toulouse Street</strong><br>Between Dauphine &amp; Burgundy<br>French Quarter, New Orleans</p>
+              <ul class="location-highlights">
+                <li>Heart of the French Quarter</li>
+                <li>Half block from Bourbon Street</li>
+                <li>0.2 miles from N. Rampart St. transit</li>
+                <li>Near Louis Armstrong Park &amp; Jackson Square</li>
+                <li>Walker&rsquo;s paradise</li>
+              </ul>
+            </div>
+            <div class="location-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1722.5!2d-90.065!3d29.9585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8620a674d1b1c5c9%3A0x8a8e41e1e5e15d48!2s927%20Toulouse%20St%2C%20New%20Orleans%2C%20LA%2070112!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="300" style="border:0; border-radius: 4px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="beat-card" data-bg="studio">
-          <span class="beat-date">1883</span>
-          <h3>Sargent&rsquo;s Obsession</h3>
-          <p>John Singer Sargent, a young American expatriate desperate to make his name, sought her out. He wrote to a mutual friend: &ldquo;I have a great desire to paint her portrait&hellip; you might tell her that I am a man of prodigious talent.&rdquo; He offered to paint her for free. Two ambitious Americans, both betting everything on one canvas.</p>
-        </div>
-
-        <div class="beat-card" data-bg="painting">
-          <span class="beat-date">1884</span>
-          <h3>The Scandal of 1884</h3>
-          <p>At the Paris Salon, the portrait ignited fury. The fallen shoulder strap, the bare skin, the deathly pallor &mdash; critics said standing before it, one &ldquo;would hear every curse word in the French language.&rdquo; Le Charivari published mocking caricatures. Gautreau&rsquo;s mother begged Sargent to remove it. He refused. Both were driven into hiding.</p>
-        </div>
-
-        <div class="beat-card" data-bg="studio">
-          <span class="beat-date">1884&ndash;1916</span>
-          <h3>A Masterpiece in Exile</h3>
-          <p>Sargent repainted the strap, fled to London, and kept the painting for over thirty years. When he finally sold it to the Metropolitan Museum of Art, he had one instruction: &ldquo;I should prefer that the picture should not be called by her name.&rdquo; He called it simply &ldquo;the best thing I have done.&rdquo;</p>
-        </div>
-
-        <div class="beat-card" data-bg="painting">
-          <span class="beat-date">Today</span>
-          <h3>The New Orleans Mona Lisa</h3>
-          <p>Now one of America&rsquo;s most famous paintings &mdash; sometimes called &ldquo;The New Orleans Mona Lisa&rdquo; &mdash; it hangs on permanent display at the Met. And it all began here, at 927 Toulouse Street, in the heart of the French Quarter.</p>
-        </div>
-
-        <div class="story-cta">
-          <p>Her mansion still stands. Come see it.</p>
-          <a href="building.html" class="btn-gold-lg">Explore the Building &rarr;</a>
-        </div>
-      </section>
-    </div>
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="texture-bg" data-texture="gold-leaf"></div>
+      <div class="texture-overlay"></div>
+      <div class="cta-content">
+        <h2 class="font-display">Her mansion still stands.<br>Come see it.</h2>
+        <a href="apartments.html" class="btn-gold-lg">View Apartments &rarr;</a>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -134,68 +223,20 @@
       <div class="footer-brand">Madame X Mansion</div>
       <p class="footer-sub">Est. 1825 &middot; French Quarter &middot; New Orleans</p>
       <nav class="footer-nav">
-        <a href="story.html">Story</a>
-        <a href="building.html">Building</a>
+        <a href="story.html">The Story</a>
         <a href="apartments.html">Apartments</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="apply.html">Apply</a>
         <a href="contact.html">Contact</a>
       </nav>
       <p class="footer-contact">
         927 Toulouse Street, New Orleans, LA 70112<br>
-        <a href="tel:+15045551825">(504) 555-1825</a> &middot;
         <a href="mailto:leasing@madamexmansion.com">leasing@madamexmansion.com</a>
       </p>
       <div class="footer-divider"></div>
-      <p class="footer-legal">Equal Housing Opportunity. All information deemed reliable but not guaranteed. Contact us for current availability and pricing.</p>
+      <p class="footer-legal">Equal Housing Opportunity. All information deemed reliable but not guaranteed.</p>
       <p class="footer-copyright">&copy; 2025 Madame X LLC. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Navigation scroll effect
-    var nav = document.getElementById('site-nav');
-    window.addEventListener('scroll', function() {
-      nav.classList.toggle('scrolled', window.scrollY > 80);
-    });
-
-    // Mobile menu toggle
-    var toggle = document.getElementById('nav-toggle');
-    var mobileMenu = document.getElementById('nav-mobile');
-    toggle.addEventListener('click', function() {
-      toggle.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-
-    // Story beat reveal + background switching
-    (function() {
-      var bgLayers = {
-        painting: document.getElementById('bg-painting'),
-        study: document.getElementById('bg-study'),
-        studio: document.getElementById('bg-studio'),
-        lachaume: document.getElementById('bg-lachaume')
-      };
-
-      var beats = document.querySelectorAll('.beat-card');
-
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            var bg = entry.target.getAttribute('data-bg');
-            if (bg) {
-              Object.keys(bgLayers).forEach(function(name) {
-                bgLayers[name].style.opacity = (name === bg) ? '1' : '0';
-              });
-            }
-          }
-        });
-      }, { threshold: 0.3, rootMargin: '-10% 0px -10% 0px' });
-
-      beats.forEach(function(beat) {
-        observer.observe(beat);
-      });
-    })();
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
