@@ -207,8 +207,8 @@ ul {
   background: #0a0a0a;
   padding: 5rem 2rem 2rem;
   flex-direction: column;
-  gap: 1.5rem;
-  z-index: 9998;
+  gap: 0;
+  z-index: 998;
 }
 
 .nav-mobile.open {
@@ -221,22 +221,18 @@ ul {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--ivory);
-  padding: 0.5rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--border-subtle);
+  display: block;
+  -webkit-tap-highlight-color: rgba(197, 165, 90, 0.2);
+  cursor: pointer;
+}
+
+.nav-mobile a:active {
+  color: var(--gold);
 }
 
 .nav-mobile a.active { color: var(--gold); }
-
-/* Make sure toggle and brand sit above the mobile overlay */
-.nav-toggle {
-  position: relative;
-  z-index: 9999;
-}
-
-.nav-brand {
-  position: relative;
-  z-index: 9999;
-}
 
 @media (max-width: 768px) {
   .nav-links { display: none; }

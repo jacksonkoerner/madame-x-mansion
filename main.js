@@ -16,17 +16,33 @@
   }, { passive: true });
 
   if (toggle && mobileMenu) {
+    // Toggle menu open/close
     toggle.addEventListener('click', function(e) {
+      e.preventDefault();
       e.stopPropagation();
-      toggle.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-    // Close menu when a link is tapped
-    var mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
+      var isOpen = mobileMenu.classList.contains('open');
+      if (isOpen) {
         toggle.classList.remove('open');
         mobileMenu.classList.remove('open');
+      } else {
+        toggle.classList.add('open');
+        mobileMenu.classList.add('open');
+      }
+    });
+
+    // Make sure toggle works on touch too
+    toggle.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      toggle.click();
+    });
+
+    // Close menu and navigate when a link is tapped
+    var mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        toggle.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        // Let the default navigation happen
       });
     });
   }
